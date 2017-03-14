@@ -1,5 +1,7 @@
 # MPI (Message-Passing Interface)
 
+## Library Installation
+
 This project refer to the chapter 3 in [An Introduction to Parallel Programming](https://www.elsevier.com/books/an-introduction-to-parallel-programming/pacheco/978-0-12-374260-5) book by Peter Pacheco.
 
 Installing MPI package:
@@ -8,6 +10,21 @@ Installing MPI package:
 
 ***Note: Always check the latest version of*** **libopenmpi1.6** ***and*** **libopenmpi1.6-dbg** ***when enter install command***
 
+## Compile project
+
+To compile this prjoect:
+
+    $ make all
+
+To clean compilation project:
+
+    $ make clean
+
+## Run
+
+To run this project and set the number of processes:
+
+    $ ./exec
 
 ## My Log
 
