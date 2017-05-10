@@ -1,0 +1,6 @@
+#!/bin/bash
+
+read -p "Enter the number of processes: " num_proc
+target="./ring"
+
+mpiexec -n $num_proc $target

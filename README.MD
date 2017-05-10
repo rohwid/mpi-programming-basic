@@ -6,9 +6,7 @@ This project refer to the chapter 3 in [An Introduction to Parallel Programming]
 
 Installing MPI package:
 
-    $ sudo apt-get install openmpi-bin openmpi-common openssh-client openssh-server libopenmpi1.6 libopenmpi1.6-dbg libopenmpi-dev
-
-***Note: Always check the latest version of*** **libopenmpi1.6** ***and*** **libopenmpi1.6-dbg** ***when enter install command***
+    $ ./install_mpi
 
 ## Compile project
 
@@ -25,6 +23,10 @@ To clean compilation project:
 To run this project and set the number of processes:
 
     $ ./exec
+
+## Main key
++ **Process = world_rank**
++ **Location = world_size**
 
 ## My Log
 

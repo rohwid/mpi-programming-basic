@@ -8,9 +8,11 @@ int main(int argc, char** argv) {
 
   // Find out rank, size
   int world_rank;
+  printf("world_rank: %d\n", world_rank);
   MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
 
   int world_size;
+  printf("world_size: %d\n", world_size);
   MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 
   // We are assuming at least 2 processes for this task
@@ -23,7 +25,6 @@ int main(int argc, char** argv) {
 
   // If we are rank 0, set the number to -1 and send it to process 1
   if (world_rank == 0) {
-
     number = -1;
     MPI_Send(&number, 1, MPI_INT, 1, 0, MPI_COMM_WORLD);
   }
@@ -31,6 +32,6 @@ int main(int argc, char** argv) {
     MPI_Recv(&number, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
     printf("Process 1 received number %d from process 0\n", number);
   }
-  
+
   MPI_Finalize();
 }

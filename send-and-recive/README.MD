@@ -7,7 +7,29 @@ Even though the message is routed to B, process B still has to acknowledge that 
 Sometimes there are cases when A might have to send many different types of messages to B. Instead of B having to go through extra measures to differentiate all these messages, MPI allows senders and receivers to also specify message IDs with the message (known as tags). When process B only requests a message with a certain tag number, messages with different tags will be buffered by the network until B is ready for them.
 
 + `MPI_Send` sends the exact count of elements
+
+`MPI_Send` example:
+
+    MPI_Send(
+        void* data,
+        int count,
+        MPI_Datatype datatype,
+        int destination,
+        int tag,
+        MPI_Comm communicator)
+
 + `MPI_Recv` will receive at most the count of elements
+
+`MPI_Recv` example:
+
+    MPI_Recv(
+        void* data,
+        int count,
+        MPI_Datatype datatype,
+        int source,
+        int tag,
+        MPI_Comm communicator,
+        MPI_Status* status)
 
 ## Elementary MPI datatypes
 The `MPI_Send` and `MPI_Recv` functions utilize MPI Datatypes as a means to specify the structure of a message at a higher level. For example, if the process wishes to send one integer to another, it would use a count of one and a datatype of MPI_INT. The other elementary MPI datatypes are listed below with their equivalent C datatypes.
