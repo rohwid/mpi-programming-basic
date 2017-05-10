@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# install packages
+sudo apt-get install -y gcc g++
+
+# download MPI
+wget http://www.mpich.org/static/downloads/3.2/mpich-3.2.tar.gz
+
+# extract mpi packages
+tar -xvzf mpich-3.2.tar.gz
+
+# install mpi
+cd mpich-3.2
+./configure --disable-fortran
+make
+sudo make install

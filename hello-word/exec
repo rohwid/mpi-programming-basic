@@ -1,6 +1,0 @@
-#!/bin/bash
-
-read -p "Enter the number of processes: " num_proc
-target="./hello-word"
-
-mpiexec -n $num_proc $target
