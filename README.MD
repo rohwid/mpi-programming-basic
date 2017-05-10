@@ -24,7 +24,7 @@ To run this project and set the number of processes:
 
     $ ./exec
 
-## Main key
+## Main key to remember
 + **Process = world_rank**
 + **Location = world_size**
 
