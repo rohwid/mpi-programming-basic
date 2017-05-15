@@ -1,6 +1,6 @@
 #!/bin/bash
 
 read -p "Enter the number of processes: " num_proc
-target="./send-and-recive"
+target="./status"
 
 mpiexec -n $num_proc $target
