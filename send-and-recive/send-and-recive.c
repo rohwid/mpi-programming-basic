@@ -8,11 +8,9 @@ int main(int argc, char** argv) {
 
   // Find out rank, size
   int world_rank;
-  printf("world_rank: %d\n", world_rank);
   MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
 
   int world_size;
-  printf("world_size: %d\n", world_size);
   MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 
   // We are assuming at least 2 processes for this task

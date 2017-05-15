@@ -1,0 +1,6 @@
+#!/bin/bash
+
+read -p "Number of process: " proc
+file="$1"
+
+mpirun -n $proc -f host_file ./"$file"
