@@ -1,15 +1,19 @@
 #!/bin/bash
 
 # install packages
+echo "INSTALLING GCC AND G++.."
 sudo apt-get install -y gcc g++
 
 # download MPI
+echo "DOWNLOADING MPICC.."
 wget http://www.mpich.org/static/downloads/3.2/mpich-3.2.tar.gz
 
 # extract mpi packages
+echo "EXTRACT MPICC.."
 tar -xvzf mpich-3.2.tar.gz
 
 # install mpi
+echo "CONFIGURING AND INSTALLING MPICC.."
 cd mpich-3.2
 ./configure --disable-fortran
 make

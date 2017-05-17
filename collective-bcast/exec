@@ -1,6 +1,6 @@
 #!/bin/bash
 
 read -p "Enter the number of processes: " num_proc
-target="./hello-word"
+target="./compare-bcast"
 
-mpiexec -n $num_proc $target
+mpiexec -n $num_proc $target 100000 10

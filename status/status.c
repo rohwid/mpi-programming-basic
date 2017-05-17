@@ -36,12 +36,10 @@ int main(int argc, char** argv) {
     // Receive at most MAX_NUMBERS from process zero
     MPI_Recv(numbers, MAX_NUMBERS, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
 
-    // After receiving the message, check the status to determine how many
-    // numbers were actually received
+    // After receiving the message, check the status to determine how many numbers were actually received
     MPI_Get_count(&status, MPI_INT, &number_amount);
 
-    // Print off the amount of numbers, and also print additional information
-    // in the status object
+    // Print off the amount of numbers, and also print additional information in the status object
     printf("1 received %d numbers from 0. Message source = %d, tag = %d\n", number_amount, status.MPI_SOURCE, status.MPI_TAG);
   }
 
