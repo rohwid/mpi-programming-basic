@@ -14,6 +14,7 @@ typedef struct {
 void decompose_domain(int domain_size, int world_rank,
                       int world_size, int* subdomain_start,
                       int* subdomain_size) {
+
   if (world_size > domain_size) {
     // Don't worry about this special case. Assume the domain size
     // is greater than the world size.
@@ -32,7 +33,9 @@ void decompose_domain(int domain_size, int world_rank,
 void initialize_walkers(int num_walkers_per_proc, int max_walk_size,
                         int subdomain_start, int subdomain_size,
                         vector<Walker>* incoming_walkers) {
+
   Walker walker;
+
   for (int i = 0; i < num_walkers_per_proc; i++) {
     // Initialize walkers at the start of the subdomain
     walker.location = subdomain_start;
@@ -44,6 +47,7 @@ void initialize_walkers(int num_walkers_per_proc, int max_walk_size,
 
 void walk(Walker* walker, int subdomain_start, int subdomain_size,
           int domain_size, vector<Walker>* outgoing_walkers) {
+
   while (walker->num_steps_left_in_walk > 0) {
     if (walker->location == subdomain_start + subdomain_size) {
       // Take care of the case when the walker is at the end
@@ -63,16 +67,20 @@ void walk(Walker* walker, int subdomain_start, int subdomain_size,
 
 void send_outgoing_walkers(vector<Walker>* outgoing_walkers,
                            int world_rank, int world_size) {
+
   // Send the data as an array of MPI_BYTEs to the next process.
   // The last process sends to process zero.
   MPI_Send((void*)outgoing_walkers->data(),
            outgoing_walkers->size() * sizeof(Walker), MPI_BYTE,
            (world_rank + 1) % world_size, 0, MPI_COMM_WORLD);
+
   // Clear the outgoing walkers list
   outgoing_walkers->clear();
 }
 
-void receive_incoming_walkers(vector<Walker>* incoming_walkers, int world_rank, int world_size) {
+void receive_incoming_walkers(vector<Walker>* incoming_walkers,
+  int world_rank, int world_size) {
+
   // Probe for new incoming walkers
   MPI_Status status;
 
