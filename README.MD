@@ -69,16 +69,14 @@ To run the project in multiple nodes and set the number of processes
 
 + Copy executable file (ex: hello_word) to nfs directory (ex: cloud) to sync with all nodes:
 
-    $ cp hello_word ~/cloud
-    $ ./exec-multi hello_word
+        $ cp hello_word ~/cloud
+        $ ./exec-multi hello_word
 
 then the response in the number of processes or `MPI_Comm_size`.
 
 ## Main key to remember
 + **Process = world_rank**
 + **Location = world_size**
-
-
 
 ## My Log
 
