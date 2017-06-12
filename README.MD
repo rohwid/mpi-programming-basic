@@ -65,7 +65,7 @@ To run the project and set the number of processes:
 
     $ ./exec
 
-To run the project in multiple nodes and set the number of processes
+To run the project in multiple nodes and set the number of processes. You must follow this [step first](http://mpitutorial.com/tutorials/running-an-mpi-cluster-within-a-lan/), to setup the NFS and synchronize all the nodes.
 
 + Copy executable file (ex: hello_word) to nfs directory (ex: cloud) to sync with all nodes:
 

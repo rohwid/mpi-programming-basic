@@ -1,6 +1,7 @@
 #!/bin/bash
 
 read -p "Number of process: " proc
-file="$1"
+file1="$1"
+file2="$2"
 
-mpirun -n $proc -f host_file ./"$file"
+mpirun -n $proc -f $file1 ./"$file2"
